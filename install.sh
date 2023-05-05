@@ -1,4 +1,5 @@
 #!/bin/sh
+
 # set -xe
 # This is a script for Vimrc
 FILE=/home/$(whoami)/.vimrc
@@ -12,7 +13,7 @@ if [ -f "$FILE" ]; then
     else
       echo "wget is not installed!"
     fi
-    clear
+    echo "\n\n\n"
     echo "installing vim-plug"
     if [ -f "/usr/bin/curl" ]; then
       curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -20,6 +21,8 @@ if [ -f "$FILE" ]; then
     else
       echo "curl is not installed!"
     fi
+    echo "Done, executing vim"
+    vim -c PlugInstall
 else
     clear
     echo "It seems that $FILE does not exist. Creating new config."
@@ -29,7 +32,7 @@ else
     else
       echo "wget is not installed!"
     fi
-    clear
+    echo "\n\n\n"
     echo "installing vim-plug"
     if [ -f "/usr/bin/curl" ]; then
       curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -37,5 +40,7 @@ else
     else
       echo "curl is not installed!"
     fi
+    echo "Done, executing vim"
+    vim -c PlugInstall
 fi
 
