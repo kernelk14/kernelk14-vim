@@ -1,4 +1,5 @@
 #!/bin/sh
+# set -xe
 # This is a script for Vimrc
 FILE=/home/$(whoami)/.vimrc
 NEWFILE=/home/$(whoami)/.vimrc.bak
@@ -11,6 +12,8 @@ if [ -f "$FILE" ]; then
     else
       echo "wget is not installed!"
     fi
+    clear
+    echo "installing vim-plug"
     if [ -f "/usr/bin/curl" ]; then
       curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -26,6 +29,8 @@ else
     else
       echo "wget is not installed!"
     fi
+    clear
+    echo "installing vim-plug"
     if [ -f "/usr/bin/curl" ]; then
       curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
