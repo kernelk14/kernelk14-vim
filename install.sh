@@ -1,4 +1,5 @@
 #!/bin/sh
+set -xe
 # This is a script for Vimrc
 FILE=/home/$(whoami)/.vimrc
 NEWFILE=/home/$(whoami)/.vimrc.bak
