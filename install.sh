@@ -3,6 +3,7 @@
 FILE=/home/$(whoami)/.vimrc
 NEWFILE=/home/$(whoami)/.vimrc.bak
 if [ -f "$FILE" ]; then
+    clear
     echo "$FILE already exists, backing up your old .vimrc file"
     mv "$FILE" -v "$NEWFILE"
     if [ -f "/usr/bin/wget" ]; then
@@ -17,7 +18,9 @@ if [ -f "$FILE" ]; then
       echo "curl is not installed!"
     fi
 else
+    clear
     echo "It seems that $FILE does not exist. Creating new config."
+
     if [ -f "/usr/bin/wget" ]; then
       wget https://raw.githubusercontent.com/kernelk14/kernelk14-vim/master/.vimrc
     else

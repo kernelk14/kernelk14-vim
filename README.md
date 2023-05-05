@@ -2,7 +2,6 @@
 
 ## Quick Start
 ```console
-$ git clone https://github.com/kernelk14/kernelk14-vim
-$ cp kernelk14-vim/.vimrc ~/
+$ curl https://raw.githubusercontent.com/kernelk14/kernelk14-vim/master/install.sh | sh
 $ vim
 ```
