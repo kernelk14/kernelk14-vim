@@ -47,8 +47,23 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'ryanoasis/vim-devicons'
 " Plug 'ryanoasis/vim-devicons'
 " Plug 'bluz71/vim-mistfly-statusline'
+Plug 'dense-analysis/ale'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'bling/vim-bufferline'
+" Plug 'maralla/completor.vim'
 call plug#end()
 
+
+" let g:completor_python_binary = '/home/khyle/.local/lib/python3.10/site-packages/jedi'
+
+let g:OmniSharp_server_stdio = 1
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 let g:gitgutter_git_executable="/usr/bin/git"
 " export TERM=xterm-256color
 augroup plug_config
